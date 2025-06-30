@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    .chart {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      height: 200px;
+      width: 300px;
+      padding: 20px;
+      background: #f0f0f0;
+    }
+    .bar {
+      width: 40px;
+      background-color: steelblue;
+      text-align: center;
+      color: white;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+  </style>
+</head>
+<body>
+  <div class="chart" id="barChart"></div>
+
+  <script>
+    const percentages = [96, 78, 66, 51, 33];
+    const chart = document.getElementById("barChart");
+
+    percentages.forEach(value => {
+      const bar = document.createElement("div");
+      bar.className = "bar";
+      bar.style.height = value * 2 + "px"; // Scale factor
+      bar.textContent = value + "%";
+      chart.appendChild(bar);
+    });
+  </script>
+</body>
+</html>
